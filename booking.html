@@ -1,0 +1,52 @@
+<! file simpleajax.htm -->
+<HTML XMLns="http://www.w3.org/1999/xHTML">
+<head>
+<!--    get all the bootstrap file and js -->
+    <title>A Simple Ajax Example</title>
+    <script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="request.js"> </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--navigation bar-->
+<div class="navbar navbar-default">
+    <ul class="nav nav-tabs">
+        <li  role="presentation" class="active"><a href="booking.html">Booking Page</a></li>
+        <li  role="presentation"><a href="admin.html">Admin Page</a></li>
+    </ul>
+</div>
+<h2>Info input </h2>
+<form >
+
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="md-form form-group">
+<!--                user input -->
+                Name:   <input type="text" name="Cname" id="Cname"  class="form-control" placeholder="Name" aria-describedby="sizing-addon1"><br>
+                Phone:  <input type="number" name="phone" class="form-control" id="number" required><br>
+                Unit Number: <input type="text" name="unitNum" class="form-control" id="unitNum" value=" "  ><br>
+                Street Number:  <input type="text" name="streetNum" class="form-control" id="streetNum" required><br>
+                Street Name: <input type="text" name="streetName" class="form-control" id="streetName" required><br>
+                Suburb:   <input type="text" name="suburb" class="form-control" id="suburb"required><br>
+                Pick up Time:  <input type="time" name="pickupTime" class="form-control" id="pickupTime" required><br>
+                Pick up Date:  <input type="date" name="pickupDate" class="form-control" id="pickupDate" required><br>
+                <h3>destination</h3>
+                Destination suburb: <input type="text" name="suburbD" class="form-control" id="suburbD" required><br>
+<!--send data to check.php to check using xhr js file-->
+                <input name = "submit" type="button" class="btn btn-info" onclick = "sendData('check.php','targetDiv' ,
+                    Cname.value, phone.value,unitNum.value, streetNum.value, streetName.value,
+                     suburb.value, pickupTime.value,pickupDate.value, suburbD.value)" value = "Fetch data">
+            </div>
+        </div>
+    </div>
+</form>
+<!--the fetch data will be here-->
+<div class="container" style="margin-top:50px" id="targetDiv">
+</div>
+</body>
+</HTML>
